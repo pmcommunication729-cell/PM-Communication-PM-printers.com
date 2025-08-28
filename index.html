@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Communication - Where Print Meets Digital Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+                           0 0 40px rgba(139, 92, 246, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
+                           0 0 60px rgba(139, 92, 246, 0.5);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes text-shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        .text-shine {
+            background: linear-gradient(110deg, #e0e7ff 30%, #ffffff 50%, #e0e7ff 70%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-shine 3s linear infinite;
+        }
+
+        .morph-shape {
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        .slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+
+        /* Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Neon glow text */
+        .neon-text {
+            text-shadow: 
+                0 0 10px rgba(139, 92, 246, 0.8),
+                0 0 20px rgba(139, 92, 246, 0.6),
+                0 0 30px rgba(139, 92, 246, 0.4),
+                0 0 40px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #ec4899);
+            border-radius: 5px;
+        }
+
+        /* Hover lift effect */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Grid background pattern */
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Animated border gradient */
+        .border-gradient {
+            position: relative;
+            background: linear-gradient(#0f0f23, #0f0f23) padding-box,
+                        linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4) border-box;
+            border: 3px solid transparent;
+            border-radius: 1rem;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #8b5cf6;
+            animation: typing 3.5s steps(30, end), blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Particle effect container */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            animation: particle-float 10s infinite linear;
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 -z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-gray-900 to-pink-900 gradient-animate"></div>
+        <div class="absolute inset-0 grid-pattern opacity-20"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg animate-pulse-glow"></div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">PM</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-violet-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-violet-400 transition-colors">About</a>
+                <a href="#services" class="hover:text-violet-400 transition-colors">Services</a>
+                <a href="#expertise" class="hover:text-violet-400 transition-colors">Expertise</a>
+                <a href="#contact" class="hover:text-violet-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-8">
+                <div class="inline-block">
+                    <div class="text-sm font-semibold text-violet-400 mb-4 tracking-widest uppercase slide-up">
+                        Since 1995 • Innovation Leader
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black mb-6">
+                <span class="block bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                    PM Communication
+                </span>
+                <span class="block text-3xl md:text-5xl mt-4 text-gray-300 font-light">
+                    Where Print Excellence Meets
+                </span>
+                <span class="block text-3xl md:text-5xl mt-2 neon-text">
+                    Digital Innovation
+                </span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Transforming businesses through cutting-edge printing solutions and revolutionary digital services. 
+                From industrial-grade printing to modern web development.
+            </p>
+
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="px-8 py-4 bg-gradient-to-r from-violet-600 to-pink-600 rounded-full font-semibold hover:scale-105 transform transition-all duration-300 animate-pulse-glow">
+                    Explore Solutions
+                </button>
+                <button class="px-8 py-4 border-2 border-violet-500 rounded-full font-semibold hover:bg-violet-500 hover:bg-opacity-20 transition-all duration-300">
+                    View Portfolio
+                </button>
+            </div>
+
+            <!-- Floating shapes -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-violet-500 rounded-full opacity-20 blur-xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-500 rounded-full opacity-20 blur-xl animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-cyan-500 rounded-full opacity-20 blur-xl animate-float" style="animation-delay: 4s;"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+                        Pioneering Excellence Since 1995
+                    </h2>
+                    <p class="text-gray-400 mb-4">
+                        With nearly three decades of industry leadership, PM Communication stands at the intersection 
+                        of traditional craftsmanship and digital innovation.
+                    </p>
+                    <p class="text-gray-400 mb-6">
+                        Our dual expertise in premium printing solutions and cutting-edge digital services makes us 
+                        the perfect partner for businesses seeking comprehensive communication solutions.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">🏆</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Industry Leader</h3>
+                                <p class="text-sm text-gray-400">Trusted by Fortune 500 companies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">🌍</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Global Reach</h3>
+                                <p class="text-sm text-gray-400">Operations in 15+ countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full h-96 bg-gradient-to-br from-violet-600 to-pink-600 rounded-2xl morph-shape opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl font-bold mb-2">28+</div>
+                            <div class="text-xl text-gray-400">Years of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-black bg-opacity-30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+                Comprehensive Solutions
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Print Services -->
+                <div class="border-gradient p-6 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-3xl">🎨</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Print Excellence</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Digital & Offset Printing</li>
+                        <li>• Variable Data Printing</li>
+                        <li>• Large Format Solutions</li>
+                        <li>• Industrial Label Systems</li>
+                        <li>• Specialty Finishes</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Services -->
+                <div class="border-gradient p-6 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-700 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-3xl">💻</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Digital Innovation</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Web Development</li>
+                        <li>• Mobile Applications</li>
+                        <li>• ERP/CRM Systems</li>
+                        <li>• Cloud Solutions</li>
+                        <li>• API Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Marketing Services -->
+                <div class="border-gradient p-6 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-3xl">🚀</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Marketing Power</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• SEO Optimization</li>
+                        <li>• Brand Development</li>
+                        <li>• Content Strategy</li>
+                        <li>• Social Media</li>
+                        <li>• Analytics & Insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+                Technical Expertise
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">⚛️</div>
+                    <div class="font-semibold">React</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">🔷</div>
+                    <div class="font-semibold">TypeScript</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">🎯</div>
+                    <div class="font-semibold">Tailwind</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">📦</div>
+                    <div class="font-semibold">Node.js</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">🐍</div>
+                    <div class="font-semibold">Python</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">☁️</div>
+                    <div class="font-semibold">AWS</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">🐳</div>
+                    <div class="font-semibold">Docker</div>
+                </div>
+                <div class="glass p-6 text-center hover:bg-violet-600 hover:bg-opacity-20 transition-all duration-300 rounded-xl">
+                    <div class="text-4xl mb-2">⚙️</div>
+                    <div class="font-semibold">DevOps</div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="mt-16 grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-violet-400" data-target="500">0</div>
+                    <div class="text-gray-400 mt-2">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-pink-400" data-target="1200">0</div>
+                    <div class="text-gray-400 mt-2">Projects Completed</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-cyan-400" data-target="15">0</div>
+                    <div class="text-gray-400 mt-2">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-green-400" data-target="28">0</div>
+                    <div class="text-gray-400 mt-2">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-black bg-opacity-30">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+                Let's Create Together
+            </h2>
+
+            <div class="glass rounded-2xl p-8">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Service Interested In</label>
+                        <select class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all">
+                            <option>Print Solutions</option>
+                            <option>Web Development</option>
+                            <option>Mobile Apps</option>
+                            <option>Digital Marketing</option>
+                            <option>Complete Package</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-violet-600 to-pink-600 rounded-lg font-semibold hover:scale-105 transform transition-all duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📧</span>
+                    </div>
+                    <h3 class="font-semibold mb-1">Email</h3>
+                    <p class="text-gray-400">hello@pmcommunication.com</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="font-semibold mb-1">Phone</h3>
+                    <p class="text-gray-400">+1 (555) 123-4567</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📍</span>
+                    </div>
+                    <h3 class="font-semibold mb-1">Office</h3>
+                    <p class="text-gray-400">Global Locations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg"></div>
+                    <span class="text-xl font-bold">PM Communication</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-violet-600 transition-colors">
+                        <span>📘</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-violet-600 transition-colors">
+                        <span>🐦</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-violet-600 transition-colors">
+                        <span>💼</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-violet-600 transition-colors">
+                        <span>📷</span>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-gray-500">
+                <p>&copy; 2024 PM Communication. Innovating since 1995.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particle generation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900', 'bg-opacity-95');
+                navbar.classList.remove('glass');
+            } else {
+                navbar.classList.remove('bg-gray-900', 'bg-opacity-95');
+                navbar.classList.add('glass');
+            }
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-target]');
+            
+            counters.forEach(counter => {
+                const updateCounter = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / 100;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Check if element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+        }
+        animateCounters();
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add success animation
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerText;
+            button.
